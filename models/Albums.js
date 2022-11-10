@@ -1,15 +1,10 @@
-// import important parts of sequelize library
 const { Model, DataTypes, INTEGER } = require('sequelize');
-// import our database connection from config.js
 const sequelize = require('../config/connection');
 
-// Initialize Product model (table) by extending off Sequelize's Model class
 class Albums extends Model {}
 
-// set up fields and rules for Album model
 Albums.init(
   {
-    // define columns**
     id: {
       type: DataTypes.INTEGER,
       allowNull: false,
@@ -21,8 +16,8 @@ Albums.init(
       allowNull: false,
     },
     album_name: {
-        type: DataTypes.STRING,
-        allowNull: false,
+      type: DataTypes.STRING,
+      allowNull: false,
     },
     price: {
       type: DataTypes.DECIMAL,
@@ -40,11 +35,11 @@ Albums.init(
       },
     },
     genre_id: {
-        type: DataTypes.INTEGER,
-        references: {
-          model: 'genre',
-          key: 'id',
-        },
+      type: DataTypes.INTEGER,
+      references: {
+        model: 'genre',
+        key: 'id',
+      },
     },
   },
   {

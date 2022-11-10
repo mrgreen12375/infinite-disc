@@ -2,16 +2,16 @@ const { Genre } = require('../models');
 
 const genredata = [
   {
-    name: 'Rock',
+    genre_name: 'Rock',
   },
   {
-    name: 'Pop',
+    genre_name: 'Pop',
   },
   {
-    name: 'Rap',
+    genre_name: 'Rap',
   },
   {
-    name: 'Country',
+    genre_name: 'Country',
   },
 ];
 

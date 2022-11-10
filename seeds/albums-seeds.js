@@ -87,6 +87,6 @@ const albumdata = [
   },
 ];
 
-const seedAlbums = () => Albums.bulkCreate(paintingdata);
+const seedAlbums = () => Albums.bulkCreate(albumdata);
 
 module.exports = seedAlbums;
