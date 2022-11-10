@@ -1,15 +1,13 @@
-const sequelize = require('../config/connection');
-const seedGenre = require('./genre-seeds');
-const seedAlbums = require('./albums-seeds');
+const User = require('./User');
+const Genre = require('./Genre');
+const Albums = require('./Albums');
 
-const seedAll = async () => {
-  await sequelize.sync({ force: true });
+Genre.hasMany(Albums, {
+  foreignKey: 'genre_id',
+});
 
-  await seedGenre();
+Albums.belongsTo(Genre, {
+  foreignKey: 'genre_id',
+});
 
-  await seedAlbums();
-
-  process.exit(0);
-};
-
-seedAll();
+module.exports = { User, Genre, Albums };
