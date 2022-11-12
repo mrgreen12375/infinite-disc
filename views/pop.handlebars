@@ -1,0 +1,117 @@
+<section class="inventory">
+  <h2 class="rock-inv">POP INVENTORY</h2>
+    <div class="col-12">
+      <p id="inv-names">ID Number:</p>
+      <textarea
+        name="tipText"
+        id="tipText"
+        placeholder="Enter inventory ID..."
+        value=""
+        class="form-input w-100"
+      ></textarea>
+    </div>
+    <div class="col-12">
+      <p id="inv-names">Band Name:</p>
+      <textarea
+        name="tipText"
+        id="tipText"
+        placeholder="Enter the band name..."
+        value=""
+        class="form-input w-100"
+      ></textarea>
+    </div>
+    <div class="col-12">
+      <p id="inv-names">Album Name:</p>
+      <textarea
+        name="tipText"
+        id="tipText"
+        placeholder="Enter Album Name..."
+        value=""
+        class="form-input w-100"
+      ></textarea>
+    </div>
+    <div class="col-12">
+      <p id="inv-names">Price:</p>
+      <textarea
+        name="tipText"
+        id="tipText"
+        placeholder="Enter price..."
+        value=""
+        class="form-input w-100"
+      ></textarea>
+    </div>
+    <div class="col-12">
+      <p id="inv-names">Stock:</p>
+      <textarea
+        name="tipText"
+        id="tipText"
+        placeholder="Enter how many are in stock..."
+        value=""
+        class="form-input w-100"
+      ></textarea>
+    </div>
+    <div class="col-12 col-lg-3">
+      <button class="add-inv" class="btn btn-primary btn-block py-3" type="submit">
+        ADD INVENTORY
+      </button>
+    </div>
+  </form>
+</section>
+<section class="tips" id="tip-container"></section>
+
+<div class="row">
+  <div class="col-auto">
+    <h2>Welcome, {{name}}!</h2>
+  </div>
+</div>
+
+<div class="row mt-4">
+  <div class="col-md-6">
+    <h3>POP INVENTORY:</h3>
+
+    <form class="form new-project-form">
+      <div class="form-group">
+        <label for="project-name">Artist Name:</label>
+        <input class="form-input" type="text" id="project-name" name="project-name" />
+      </div>
+      <div class="form-group">
+        <label for="project-name">Album Name:</label>
+        <input class="form-input" type="text" id="project-name" name="project-name" />
+      </div>
+      <div class="form-group">
+        <label for="project-funding">Price($):</label>
+        <input class="form-input" type="number" id="project-funding" name="project-funding" />
+      </div>
+      <div class="form-group">
+        <label for="project-funding">Stock:</label>
+        <input class="form-input" type="number" id="project-funding" name="project-funding" />
+      </div>
+      <div class="form-group">
+        <label for="project-desc">Description:</label>
+        <textarea class="form-input" id="project-desc" name="project-desc"></textarea>
+      </div>
+      <div class="form-group">
+        <button type="submit" class="btn btn-primary">ADD INVENTORY</button>
+      </div>
+    </form>
+  </div>
+
+  {{#if projects.length}}
+  <div class="col-md-6 project-list">
+    <h3>CURRENT INVENTORY:</h3>
+
+    {{#each projects as |project|}}
+    <div class="row mb-2">
+      <div class="col-md-8">
+        <h4><a href="/project/{{project.id}}">{{project.name}}</a></h4>
+      </div>
+      <div class="col-md-4">
+        <button class="btn btn-sm btn-danger" data-id="{{project.id}}">DELETE</button>
+      </div>
+    </div>
+    {{/each}}
+  </div>
+  {{/if}}
+</div>
+
+<script src="./js/profile.js"></script>

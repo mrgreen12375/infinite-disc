@@ -1,1 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ININITE DISC</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="/css/jass.css">
+  <link rel="stylesheet" type="text/css" href="/public/style.css">
+</head>
+
+<body>
+    <nav class="navigation" class="navbar navbar-expand-lg py-5 p-3 mb-2 bg-secondary text-black">
+        <div class="container-fluid">
+            <a class="display-6" id="header" class="navbar-brand" class="text-center" aria-current="page" href="index.html">INFINITE DISC <img src="https://cdn.pixabay.com/photo/2018/02/12/16/35/phonograph-record-3148686__480.jpg" class="img"> </a>
+        </div>
+  
+
+      </nav>
+  
+
+  <main>
+    <aside>
+      <h2 class="data">ALL THE DATA YOU NEED, JUST A CLICK AWAY</h2>
+    </aside>
+    <div class="gallery">
+       {{#if logged_in}}
+        <a href="/genre"></a> 
+        <button class="no-button" id="logout">LOGOUT</button>
+        {{else}}
+        <a href="/login">login</a>
+        {{/if}}
+
+     {{{ body }}}
+    </div>
+      
+   
+  </main>
+
+
+    {{#if logged_in}}
+  <script src="/js/logout.js"></script>
+  {{/if}}
+
+</body>
+
+</html>

@@ -1,1 +1,180 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans&family=Noto+Sans:ital@1&family=Noto+Serif&display=swap');
+
+
+:root {
+    --primary: #3d5852;
+    --secondary: #006fe670;
+    --tertiary: #5e877f;
+    --quatrinary: #6c6b67;
+    --light: #e3e4e3;
+    --dark: #182c23;
+    --error: rgb(228, 46, 1);
+    --border-radius: 0.3rem;
+    --default: rgb(113, 111, 111)
+
+  }
+  
+  body {
+    font-family: 'Josefin Sans', sans-serif;
+    font-family: 'Noto Sans', sans-serif;
+    font-family: 'Noto Serif', serif;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    justify-content: flex-start;
+    background-color: var(--quatrinary);
+  }
+ 
+  a {
+    color: var(--dark);
+    text-decoration: none;
+  }
+  
+  a:visited {
+    color: inherit;
+  }
+  
+  main {
+    display: flex;
+    flex-wrap: wrap;
+    flex-grow: 1;
+  }
+  
+  aside {
+    flex: 0;
+    background-color: var(--default);
+    padding: 80px;
+    text-align: left;
+    color: black; 
+  }
+  .data{
+    line-height: 68px;
+    text-align: center;
+
+  }
+
+  
+.navigation {
+    color: black;
+    text-decoration: none;
+    text-align: center;
+    padding: 50px;
+    background-color: var(--default);
+}
+
+.logout{
+  background-color: rgb(255, 255, 255);
+  font-size: 20px;
+  text-decoration: none;
+  text-align: right;
+}
+
+.img{
+  border-radius: 50%;
+  width: 80px;
+  height: 80px;
+}
+
+#header{
+  font-size: 85px;
+}
+
+.login-form{
+  font-size: 25px;
+  text-align: center;
+  line-height: 40px;
+}
+
+.login-button{
+  background-color: var(--default);
+  margin-top: 30px;
+  font-size: 20px;
+}
+
+.login-header{
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.whole-form{
+  margin-left: 44px;
+  background-color: rgb(190, 190, 190);
+  border-radius: 5%;
+  height: 400px;
+}
+
+.make-acc{
+  font-size: 16px;
+  margin-top: 18px;
+}
+
+  nav a:hover {
+    color: rgb(71, 68, 68);
+    
+  }
+
+#type-text{
+    background-color: rgb(255, 254, 254);
+  }
+  
+.email{
+  margin-bottom: 27px;
+}
+
+.password{
+  width: 260px;
+}
+
+
+#inv-names{
+  font-size: 22px;
+}
+
+.rock-inv{
+  font-size: 40px;
+}
+
+.add-inv{
+  background-color: #eae5e5;
+  margin-left: 120px;
+  margin-top: 20px;
+  font-size: 15px;
+}
+
+  .gallery {
+    flex: 4;
+    padding: 50px;
+    background-color: white;
+    display: flex;
+    background-size: cover;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .btn-no-style {
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 100%;
+    transition: color 0.1s;
+    margin-left: 16px;
+  }
+  
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  .card-body{
+    text-align: center;
+  }
+ 
+  .whole-signup{
+    margin-left: 30px;
+  
+  }
 
