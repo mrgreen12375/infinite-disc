@@ -1,0 +1,112 @@
+header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 200px;
+    width: 100%;
+    background-size: 100%;
+    background-color: rgb(74, 74, 74);
+    background-position: center;
+    color: white;
+    font-size: 50px;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.column {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin: 0px 25px;
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.loginTitle {
+    font-size: 50px;
+}
+
+.loginInput {
+    font-size: 30px;
+}
+
+.userInput {
+    font-size: 20px;
+    border-color: black;
+    border-radius: 5px;
+    padding: 12px 250px 12px 12px;
+}
+
+.loginButton {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+#loginButton {
+    height: 40px;
+    width: 150px;
+    background-color: rgb(74, 74, 74);
+    border-radius: 5px;
+    font-size: 20px;
+    margin-top: 20px;
+}
+
+#loginButton:hover {
+    background-color: grey;
+}
+
+.orderGenre {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.orderImage {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 20px;
+}
+
+.genreImage {
+    height: 300px;
+    width: 300px;
+}
+
+span {
+    font-size: 25px;
+    padding: 5px;
+}
+
+.orderAdd {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.addInventory {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.inventoryButton {
+    margin-top: 5px;
+    margin-bottom: 50px;
+}
+
+.inventoryCard {
+    width: 350px;
+    border: 2px solid black;
+    border-radius: 5px;
+    padding: 5px 20px 5px 20px;
+    margin: 10px;
+}
