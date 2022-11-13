@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { Album, User } = require('../models');
+const { Albums, User, Genre } = require('../models');
 const withAuth = require('../utils/auth');
 
 
@@ -15,90 +15,43 @@ router.get('/', (req, res) => {
 
 router.get('/genre', withAuth, async (req, res) => {
   try {
+    console.log('here 1')
     // Find the logged in user based on the session ID
     const userData = await User.findByPk(req.session.user_id, {
-      attributes: { exclude: ['password'] },
-      include: [{ model: Project }],
+      attributes: { exclude: ['password'] }
     });
+    console.log(userData)
+    console.log('here 2')
 
     const user = userData.get({ plain: true });
-
+    console.log(user)
+    console.log('here 3')
     res.render('genre', {
       ...user,
       logged_in: true
     });
+    console.log('here 4')
   } catch (err) {
+    console.log(err)
     res.status(500).json(err);
   }
 });
 
-router.get('/', async (req, res) => {
+router.get('/genre/:genre_id/albums', async (req, res) => {
   try {
-    // Get all projects and JOIN with user data
-    const genretData = await Genre.findAll({
-      include: [
-        {
-          model: User,
-          attributes: ['name'],
-        },
-      ],
-    });
-
-    // Serialize data so the template can read it
-    const genres = genretData.map((genre) => genre.get({ plain: true }));
-
-    // Pass serialized data and session flag into template
-    res.render('genre', { 
-      genres, 
-      logged_in: req.session.logged_in 
-    });
-  } catch (err) {
-    res.status(500).json(err);
-  }
-});
-
-router.get('/album', async (req, res) => {
-  try {
-    const albumData = await Album.findAll({
-      include: [
-        {
-          model: User,
-          attributes: ['name'],
-        },
-      ],
+    console.log('here 1')
+    const albumData = await Albums.findAll({
+      where: { genre_id: req.params.genre_id}
     });
 
     const album = albumData.map((album) => album.get({ plain: true }));
-
-    res.render('album', { 
+    console.log(album)
+    res.render('albums', { 
       album, 
       logged_in: req.session.logged_in 
     });
   } catch (err) {
+    console.log(err)
     res.status(500).json(err);
   }
 });
-
-router.get('/album/:id', async (req, res) => {
-  try {
-    const albumData = await Album.findByPk(req.params.id, {
-      include: [
-        {
-          model: User,
-          attributes: ['name'],
-        },
-      ],
-    });
-
-    const album = albumData.get({ plain: true });
-
-    res.render('album', {
-      ...album,
-      logged_in: req.session.logged_in
-    });
-  } catch (err) {
-    res.status(500).json(err);
-  }
-});
-
-module.exports = router;
