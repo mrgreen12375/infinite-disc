@@ -14,40 +14,47 @@ router.get('/', (req, res) => {
 });
 
 router.get('/genre', withAuth, async (req, res) => {
+
   try {
-    console.log('here 1')
-    // Find the logged in user based on the session ID
     const userData = await User.findByPk(req.session.user_id, {
       attributes: { exclude: ['password'] }
     });
-    console.log(userData)
-    console.log('here 2')
 
     const user = userData.get({ plain: true });
-    console.log(user)
-    console.log('here 3')
+
+    const genreData = await Genre.findAll()
+
+    const genre = genreData.map((genre) => genre.get({ plain: true }));
+    console.log(genre)
     res.render('genre', {
       ...user,
+      genre,
       logged_in: true
     });
-    console.log('here 4')
   } catch (err) {
-    console.log(err)
     res.status(500).json(err);
   }
 });
 
-router.get('/genre/:genre_id/albums', async (req, res) => {
+router.get('/genre/:genre_id/albums', withAuth, async (req, res) => {
   try {
-    console.log('here 1')
     const albumData = await Albums.findAll({
       where: { genre_id: req.params.genre_id}
     });
 
     const album = albumData.map((album) => album.get({ plain: true }));
-    console.log(album)
+
+    const genre = await Genre.findOne({
+      where: { id: req.params.genre_id }
+    })
+
+    const inventory = {
+      genre: genre.genre_name,
+      album
+    }
+
     res.render('albums', { 
-      album, 
+      inventory, 
       logged_in: req.session.logged_in 
     });
   } catch (err) {
@@ -55,3 +62,5 @@ router.get('/genre/:genre_id/albums', async (req, res) => {
     res.status(500).json(err);
   }
 });
+
+module.exports = router;

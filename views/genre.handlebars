@@ -1,19 +1,12 @@
+<div class="inventoryColumn">
 <h2 class="loginTitle">Genres</h2>
 <div class="orderGenre">
+    {{#each genre}}
+    <a href="/genre/{{id}}/albums">
     <div class="orderImage">
-        <span>Rock</span>
-        <img class="genreImage" src="./images/rock-image.jpg" alt="light bulb"/>
+        <span>{{genre_name}}</span>
+        <img class="genreImage" src="./images/{{img}}" alt="light bulb"/>
     </div>
-    <div class="orderImage">
-        <span>Pop</span>
-        <img class="genreImage" src="./images/pop-image.jpg" alt="light bulb"/>
-    </div>
-    <div class="orderImage">
-        <span>Rap</span>
-        <img class="genreImage" src="./images/rap-image.jpg" alt="light bulb"/>
-    </div>
-    <div class="orderImage">
-        <span>Country</span>
-        <img class="genreImage" src="./images/country-image.jpg" alt="light bulb"/>
-    </div>
+    </a>
+    {{/each}}
 </div>
