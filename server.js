@@ -1,3 +1,6 @@
+//setup packages neededand inported path, routes, and sequilize
+//setup port and sess to configure and link a session object with the sequelize store
+//setup template engine to be used
 const path = require('path');
 const express = require('express');
 const session = require('express-session');
@@ -11,7 +14,7 @@ const SequelizeStore = require('connect-session-sequelize')(session.Store);
 const app = express();
 const PORT = process.env.PORT || 3001;
 
-// Set up Handlebars.js engine with custom helpers
+
 const hbs = exphbs.create({ helpers });
 
 const sess = {
@@ -31,7 +34,6 @@ const sess = {
 
 app.use(session(sess));
 
-// Inform Express.js on which template engine to use
 app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');
 

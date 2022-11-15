@@ -1,3 +1,4 @@
+//setup the seed object for the genre page to create catagories
 const { Genre } = require('../models');
 
 const genredata = [

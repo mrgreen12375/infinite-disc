@@ -1,3 +1,5 @@
+//setup the seed object for the albums page
+//setup genre id's to correspond with the specific genre catagory
 const { Albums } = require('../models');
 
 const albumdata = [

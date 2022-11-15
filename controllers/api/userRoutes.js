@@ -1,3 +1,4 @@
+//setup post routes for user login and logout
 const router = require('express').Router();
 const { User } = require('../../models');
 

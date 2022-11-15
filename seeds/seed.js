@@ -1,3 +1,4 @@
+//setup functions that will seed the genre and album objects
 const sequelize = require('../config/connection');
 const seedGenre = require('./genre-seeds');
 const seedAlbums = require('./albums-seeds');

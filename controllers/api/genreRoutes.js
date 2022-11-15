@@ -1,3 +1,4 @@
+//initial setup - maybe use in the future
 const router = require('express').Router();
 const { Genre, Album } = require('../../models');
 
