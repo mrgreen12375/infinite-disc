@@ -1,10 +1,13 @@
+//setup route to login page
+//setup route to genre page with auth needed
+//setup route to the albums page with auth needed
+//setup the data information needed for each page
 const router = require('express').Router();
 const { Albums, User, Genre } = require('../models');
 const withAuth = require('../utils/auth');
 
 
 router.get('/', (req, res) => {
-  // If the user is already logged in, redirect the request to another route
   if (req.session.logged_in) {
     res.redirect('/genre');
     return;
@@ -25,7 +28,7 @@ router.get('/genre', withAuth, async (req, res) => {
     const genreData = await Genre.findAll()
 
     const genre = genreData.map((genre) => genre.get({ plain: true }));
-    console.log(genre)
+
     res.render('genre', {
       ...user,
       genre,

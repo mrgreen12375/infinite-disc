@@ -1,3 +1,4 @@
+//setup function to input new inventory card and post it
 const addToInventory = async (event) => {
   event.preventDefault();
 

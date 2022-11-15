@@ -1,3 +1,6 @@
+//setup field/columns on model
+//setup connection to sequelize
+//setup bcrypt to hide password information
 const { Model, DataTypes } = require('sequelize');
 const bcrypt = require('bcrypt');
 const sequelize = require('../config/connection');

@@ -1,3 +1,4 @@
+//setup the relationship between the models
 const User = require('./User');
 const Genre = require('./Genre');
 const Albums = require('./Albums');

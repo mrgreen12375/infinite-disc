@@ -1,3 +1,5 @@
+//setup field/columns on model
+//setup connection to sequelize
 const { Model, DataTypes } = require('sequelize');
 
 const sequelize = require('../config/connection.js');
