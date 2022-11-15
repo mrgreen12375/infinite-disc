@@ -1,3 +1,4 @@
+//setup post route to create new inventory cards
 const router = require('express').Router();
 const { Albums } = require('../../models');
 
