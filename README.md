@@ -9,7 +9,7 @@ As a record store, it is important to keep up-to-date inventory at all times to 
 - [Contribution](#Contributing)
 - [Test](#Test)
 - [Usernames](#Usernames)
-
+- [Links](#Links)
 ## Mock-up 
 ![alt infinite-disc website](/public/images/mock-up-disc.png)
 ![alt infinite-disc website](/public/images/mock-up-disc-pt2.png)
@@ -19,9 +19,9 @@ npm i
 ## Usage
 npm start
 ## Contributing
-Steven Green
-Jennifer Mayo
-Melissa Rubio
+Steven Green,
+Jennifer Mayo,
+Melissa Rubio,
 Forrest Lanhart
 ## Test
 npm run test
@@ -30,4 +30,6 @@ GitHub Username: [mrgreen12375](https://github.com/mrgreen12375)
 GitHub Username: [jlmayo](https://github.com/jlmayo)
 GitHub Username: [melissarubiio](https://github.com/melissarubiio)
 GitHub Username: [flanhart](https://github.com/flanhart)
-
+## Links
+Heroku: https://infinite-disc.herokuapp.com/
+Github: https://github.com/mrgreen12375/infinite-disc
