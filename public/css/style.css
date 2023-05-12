@@ -188,3 +188,39 @@ label {
     padding: 15px 20px 5px 20px;
     margin: 10px;
 }
+
+@media screen and (max-width: 500px) {
+    h1 {
+        font-size: 45px;
+    }
+
+    .row {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .column {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .loginTitle {
+        margin-bottom: 10px;
+    }
+
+    .userInput {
+        width: 300px;
+        padding: 12px;
+    }
+
+    #signup-form {
+        margin-bottom: 50px;
+    }
+
+    .inventoryCard {
+        width: 300px;
+    }
+
+}
