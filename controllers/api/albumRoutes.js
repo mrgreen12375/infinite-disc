@@ -32,4 +32,42 @@ router.post('/', async (req, res) => {
     }
 })
 
+router.put('/:id', async (req, res) => {
+    // delete on tag by its `id` value
+    try{
+      const deleteTag = await Albums.findOne({
+        where:{
+          id: req.params.id
+        }
+      })
+      if(deleteTag){
+        await deleteTag.update(req.body);
+        res.status(200).json(deleteTag);
+        return;
+      }
+      res.status(404).json('DELETE Album error')
+    }catch(err){
+      res.status(500).json(err)
+    }
+  });
+  
+  router.delete('/:id', async (req, res) => {
+    // delete on tag by its `id` value
+    try{
+      const deleteTag = await Albums.findOne({
+        where:{
+          id: req.params.id
+        }
+      })
+      if(deleteTag){
+        await deleteTag.destroy();
+        res.status(200).json(deleteTag);
+        return;
+      }
+      res.status(404).json('DELETE Album error')
+    }catch(err){
+      res.status(500).json(err)
+    }
+  });
+
 module.exports = router;
