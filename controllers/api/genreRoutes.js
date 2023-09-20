@@ -1,11 +1,11 @@
 //initial setup - maybe use in the future
 const router = require('express').Router();
-const { Genre, Album } = require('../../models');
+const { Genre, Albums } = require('../../models');
 
 router.get('/', async (req, res) => {
     try{
       const genreData = await Genre.findAll({
-        include: [{model: Album}]
+        include: [{model: Albums}]
       });
       res.status(200).json(genreData);
     }catch(err){
@@ -16,7 +16,7 @@ router.get('/', async (req, res) => {
   router.get('/:id', async (req, res) => {
     try{
       const genreData = await Genre.findByPk(req.params.id, {
-        include: [{model: Album}]
+        include: [{model: Albums}]
       });
       if(genreData){
         res.status(200).json(genreData);

@@ -2,6 +2,24 @@
 const router = require('express').Router();
 const { Albums } = require('../../models');
 
+router.get('/', async (req, res) => {
+    try{
+      const albumData = await Albums.findAll();
+      res.status(200).json(albumData);
+    }catch(err){
+      res.status(500).json(err);
+    }
+  });
+
+router.get('/:id', async (req, res) => {
+    try{
+      const albumData = await Albums.findByPk(req.params.id);
+      res.status(200).json(albumData);
+    }catch(err){
+      res.status(500).json(err);
+    }
+  });
+
 router.post('/', async (req, res) => {
     try {
         console.log(req.body)
