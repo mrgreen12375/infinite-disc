@@ -66,4 +66,23 @@ router.get('/genre/:genre_id/albums', withAuth, async (req, res) => {
   }
 });
 
+router.get('/genre/:genre_id/albums/edit/:id', withAuth, async (req, res) => {
+  try {
+    const postData = await Albums.findByPk(req.params.id);
+
+    if (postData) {
+      const post = postData.get({ plain: true });
+
+      res.render('edit', {
+        layout: 'main',
+        post,
+      });
+    } else {
+      res.status(404).end();
+    }
+  } catch (err) {
+    console.log(err);
+  }
+});
+
 module.exports = router;

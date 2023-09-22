@@ -1,0 +1,36 @@
+<div class="inventoryColumn">
+    <h2>Edit Inventory</h2>
+    <form class="orderAdd" id="editInventory">
+        <input type="hidden" name="post-id" id="postId" value="{{post.id}}" />
+        <div class="addInventory">
+            <label>Genre:</label>
+            <select class="selectInput" id="albumGenre">
+                <option >----- Select -----</option>
+                <option value="1">Rock</option>
+                <option value="2">Pop</option>
+                <option value="3">Rap</option>
+                <option value="4">Country</option>
+            </select>
+        </div>
+        <div class="addInventory">
+            <label>Band Name:</label>
+            <input class="input" type="text" value="{{post.artist_name}}" id="albumBandName">
+        </div>
+        <div class="addInventory">
+            <label>Album Name:</label>
+            <input class="input" type="text" value="{{post.album_name}}" id="albumName">
+        </div>
+        <div class="addInventory">
+            <label>Price:</label>
+            <input class="input" type="text" value="{{post.price}}" id="albumPrice">
+        </div>
+        <div class="addInventory">
+            <label>Stock:</label>
+            <input class="input" type="text" value="{{post.stock}}" id="albumStock">
+        </div>
+        <div class="inventoryButton">
+            <button class="addButton" type="submit">Edit</button>
+        </div>
+    </form>
+</div>
+<script src="/js/edit.js"></script>

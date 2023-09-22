@@ -1,7 +1,7 @@
-//setup function to input new inventory card and post it
-const addToInventory = async (event) => {
+const editInventory = async (event) => {
   event.preventDefault();
 
+  const postId = document.querySelector('#postId').value;
   const artist_name = document.querySelector('#albumBandName').value.trim()
   const album_name = document.querySelector('#albumName').value.trim()
   const price = document.querySelector('#albumPrice').value
@@ -9,8 +9,8 @@ const addToInventory = async (event) => {
   const genre_id = document.querySelector('#albumGenre').value
 
   if (artist_name && album_name && price && stock && genre_id) {
-    const response = await fetch(`/api/album`, {
-      method: 'POST',
+    const response = await fetch(`/api/album/${postId}`, {
+      method: 'PUT',
       body: JSON.stringify({ artist_name, album_name, price, stock, genre_id }),
       headers: {
         'Content-Type': 'application/json',
@@ -29,5 +29,5 @@ const addToInventory = async (event) => {
 };
 
 document
-  .querySelector('#addToInventory')
-  .addEventListener('submit', addToInventory);
+  .querySelector('#editInventory')
+  .addEventListener('submit', editInventory);

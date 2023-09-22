@@ -170,6 +170,7 @@ label {
 .addButton {
     height: 40px;
     width: 150px;
+    color: white;
     background-color: rgb(0, 0, 255);
     border-radius: 5px;
     font-size: 20px;
@@ -182,11 +183,26 @@ label {
 }
 
 .inventoryCard {
+    display: flex;
+    justify-content: space-between;
     width: 350px;
     border: 2px solid black;
     border-radius: 5px;
     padding: 15px 20px 5px 20px;
     margin: 10px;
+}
+
+.edit {
+    position: relative;
+    bottom: 50px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.edit a {
+    font-size: 16px;
+    color: black;
 }
 
 @media screen and (max-width: 500px) {
