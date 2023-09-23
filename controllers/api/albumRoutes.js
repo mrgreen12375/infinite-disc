@@ -22,7 +22,6 @@ router.get('/:id', async (req, res) => {
 
 router.post('/', async (req, res) => {
     try {
-        console.log(req.body)
         const albumData = await Albums.create(req.body)
         res.status(200).json(albumData)
     }
@@ -35,14 +34,14 @@ router.post('/', async (req, res) => {
 router.put('/:id', async (req, res) => {
     // delete on tag by its `id` value
     try{
-      const deleteTag = await Albums.findOne({
+      const updateAlbum = await Albums.findOne({
         where:{
           id: req.params.id
         }
       })
-      if(deleteTag){
-        await deleteTag.update(req.body);
-        res.status(200).json(deleteTag);
+      if(updateAlbum){
+        await updateAlbum.update(req.body);
+        res.status(200).json(updateAlbum);
         return;
       }
       res.status(404).json('DELETE Album error')
@@ -54,14 +53,14 @@ router.put('/:id', async (req, res) => {
   router.delete('/:id', async (req, res) => {
     // delete on tag by its `id` value
     try{
-      const deleteTag = await Albums.findOne({
+      const deleteAlbum = await Albums.findOne({
         where:{
           id: req.params.id
         }
       })
-      if(deleteTag){
-        await deleteTag.destroy();
-        res.status(200).json(deleteTag);
+      if(deleteAlbum){
+        await deleteAlbum.destroy();
+        res.status(200).json(deleteAlbum);
         return;
       }
       res.status(404).json('DELETE Album error')

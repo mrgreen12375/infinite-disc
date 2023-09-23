@@ -28,6 +28,22 @@ const editInventory = async (event) => {
   }
 };
 
+const deleteClickHandler = async function() {
+
+  const postId = document.querySelector('#postId').value;
+  const genre_id = document.querySelector('#albumGenre').value
+
+  await fetch(`/api/album/${postId}`, {
+    method: 'DELETE'
+  });
+
+  document.location.replace(`/genre/${genre_id}/albums`);
+};
+
 document
   .querySelector('#editInventory')
   .addEventListener('submit', editInventory);
+
+document
+  .querySelector('#delete')
+  .addEventListener('click', deleteClickHandler);
