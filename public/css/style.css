@@ -16,6 +16,7 @@ header {
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-bottom: 100px;
 }
 
 .column {
@@ -163,10 +164,6 @@ label {
     padding: 3px;
 }
 
-.inventoryButton {
-    margin-bottom: 50px;
-}
-
 .addButton {
     height: 40px;
     width: 150px;
@@ -189,7 +186,7 @@ label {
     border: 2px solid black;
     border-radius: 5px;
     padding: 15px 20px 5px 20px;
-    margin: 10px;
+    margin-top: 20px;
 }
 
 .edit {
