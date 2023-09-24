@@ -19,9 +19,7 @@ const editInventory = async (event) => {
 
     if (response.ok) {
       document.location.replace(`/genre/${genre_id}/albums`);
-    } else {
-      alert('Failed to update inventory');
-    }
+    } 
   }
   else {
     alert('Please fill out form completely')
