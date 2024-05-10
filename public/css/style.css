@@ -1,4 +1,8 @@
-@import url('https://fonts.googleapis.com/css2?family=Poetsen+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poetsen+One&family=Ubuntu+Sans+Mono:ital,wght@0,400..700;1,400..700&display=swap');
+
+html {
+    font-family: "Ubuntu Sans Mono", monospace;
+}
 
 header {
     display: flex;
@@ -11,7 +15,6 @@ header {
     background-position: center;
     color: white;
     font-size: 50px;
-    font-family: 'Courier New', Courier, monospace;
 }
 
 .inventoryColumn {
@@ -46,6 +49,11 @@ header {
     border-color: #1641ff;
 }
 
+a {
+    font-family: "Ubuntu Sans Mono", monospace;
+    font-weight: bold;
+}
+
 .back:link {
     position: relative;
     top: 2px;
@@ -53,8 +61,7 @@ header {
     color: black;
     text-decoration: none;
     font-size: 20px;
-    padding-left: 10px;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    padding-left: 15px;
 }
 
 .back:visited {
@@ -72,11 +79,8 @@ header {
     font-size: 20px;
     padding: 10px 6px 0px 20px;
     cursor: pointer;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-}
-
-.add {
-    font-family: "Poetsen One", sans-serif;
+    font-family: "Ubuntu Sans Mono", monospace;
+    font-weight: bold;
 }
 
 .log {
@@ -85,7 +89,6 @@ header {
 
 .loginTitle {
     font-size: 40px;
-    font-family: "Poetsen One", sans-serif;
 }
 
 .loginInput {
@@ -136,10 +139,6 @@ header {
     margin: 20px;
 }
 
-.orderImage h3{
-    font-family: "Poetsen One", sans-serif;
-}
-
 .genreImage {
     height: 200px;
     width: 200px;
@@ -152,12 +151,7 @@ a:link {
     text-decoration: none;
 }
 
-.font {
-    font-family: "Poetsen One", sans-serif;
-}
-
 h3 {
-    font-family: 'Courier New', Courier, monospace;
     color: black;
     margin: 0px 0px 10px 0px;
 }
@@ -166,7 +160,6 @@ h3 {
     display: flex;
     flex-direction: column;
     align-items: flex-end;
-    font-family: "Poetsen One", sans-serif;
 }
 
 .addInventory {
@@ -205,7 +198,6 @@ label {
     border-radius: 5px;
     font-size: 20px;
     margin-top: 20px;
-    font-family: 'Courier New', Courier, monospace;
 }
 
 .addButton:hover {
@@ -234,6 +226,16 @@ label {
 .edit a {
     font-size: 16px;
     color: black;
+}
+
+.edit a:hover {
+    border: 2px solid black;
+    border-radius: 5px;
+}
+
+button {
+    font-family: "Ubuntu Sans Mono", monospace;
+    font-weight: bold;
 }
 
 @media screen and (max-width: 500px) {
